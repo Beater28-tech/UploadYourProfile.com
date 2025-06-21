@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UpYouFrame | Crop & Frame</title>
+  <link rel="stylesheet" href="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <div class="container">
+      <h1>📸 UpYouFrame</h1>
+      <p class="tagline">Upload. Crop. Frame. Download.</p>
+
+      <div class="step">
+        <h2>📥 Step 1: Download the Frame</h2>
+        <a href="frame.png" download>
+          <button class="btn">Download Frame</button>
+        </a>
+      </div>
+
+      <div class="step">
+        <h2>🖼️ Step 2: Upload Frame (PNG)</h2>
+        <input type="file" id="frameInput" accept="image/png" />
+      </div>
+
+      <div class="step">
+        <h2>📷 Step 3: Upload Your Photo</h2>
+        <input type="file" id="photoInput" accept="image/*" disabled />
+      </div>
+
+      <div class="step">
+        <h2>🔍 Step 4: Zoom (Optional)</h2>
+        <input type="range" id="zoomSlider" min="0.01" max="3" step="0.01" value="1" style="display:none;" />
+      </div>
+
+      <div class="preview">
+        <img id="previewImage" style="max-width:100%; display:none;" />
+      </div>
+
+      <div class="actions">
+        <button id="cropBtn" class="btn" style="display:none;">Crop & Merge</button>
+      </div>
+
+      <canvas id="canvas" width="800" height="800" style="display:none;"></canvas>
+
+      <p id="status">Follow the steps above to create your framed photo!</p>
+    </div>
+
+    <div class="download-section">
+      <button id="downloadBtn" class="btn" style="display:none;">⬇️ Download Final Image</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/cropperjs@1.5.13/dist/cropper.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
